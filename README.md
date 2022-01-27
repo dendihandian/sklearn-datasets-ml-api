@@ -13,7 +13,7 @@ poetry install
 
 ### Starting The Server
 ```
-poetry run uvicorn main:app --reload
+poetry run uvicorn app.main:app --reload
 ```
 
 ## Deployment
@@ -21,4 +21,14 @@ poetry run uvicorn main:app --reload
 ### Exporting The Environment For Production
 ```
 poetry export -f requirements.txt --without-hashes > requirements.txt
+```
+
+### Building The Docker Image
+```
+docker build -t sklearn-datasets-ml-api:python-3.9 -f ./docker/python/Dockerfile .
+```
+
+### Running The Built Image Into Container
+```
+docker run -d --name sdml-api -p 80:80 sklearn-datasets-ml-api:python-3.9
 ```
