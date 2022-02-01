@@ -49,7 +49,7 @@ poetry export -f requirements.txt --without-hashes > requirements.txt
 docker build -t sklearn-datasets-ml-api:latest -f ./docker/0.1.0/python/Dockerfile .
 ```
 ```
-docker build -t sklearn-datasets-ml-api:latest -f ./docker/0.1.0/alpine/Dockerfile .
+docker build -t sklearn-datasets-ml-api:alpine -f ./docker/0.1.0/alpine/Dockerfile .
 ```
 
 ### Running The Built Image Into Container
@@ -77,4 +77,14 @@ poetry remove pandas --dev
 Exporting Enviroment Including Development Dependencies:
 ```
 poetry export -f requirements.txt --without-hashes > requirements.txt --dev
+```
+
+Tag an Image Before Push:
+```
+docker tag sklearn-datasets-ml-api:latest dendihandian/sklearn-datasets-ml-api:latest
+```
+
+Push the Image to Registry:
+```
+docker push dendihandian/sklearn-datasets-ml-api:latest
 ```
