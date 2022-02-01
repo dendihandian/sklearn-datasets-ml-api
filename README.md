@@ -18,6 +18,10 @@ poetry run uvicorn app.main:app --reload
 
 ## MLFlow
 
+### Train and Tracking Model
+```
+poetry run python diabetes_lr.py
+```
 
 ### Running The MLFLow UI
 ```
