@@ -23,5 +23,5 @@ async def iris_predict(param: IrisFeatures):
     ]])
 
     return {
-        'target': prediction[0]
+        'target': int(prediction[0])
     }

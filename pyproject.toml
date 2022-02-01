@@ -13,7 +13,6 @@ uvicorn = {extras = ["standard"], version = "^0.17.0"}
 pytest = "^5.2"
 mlflow = "^1.23.1"
 sklearn = "^0.0"
-pandas = "^1.4.0"
 utils = "^1.0.1"
 
 [build-system]

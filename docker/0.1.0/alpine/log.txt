@@ -1,0 +1,407 @@
+path\sklearn-datasets-ml-api>docker build -t sklearn-datasets-ml-api:alpine -f ./docker/0.1.0/alpine/Dockerfile .
+[+] Building 77.5s (8/9)
+ => [internal] load build definition from Dockerfile                                                                                                                                                          0.1s
+ => => transferring dockerfile: 291B                                                                                                                                                                          0.0s
+ => [internal] load .dockerignore                                                                                                                                                                             0.0s
+ => => transferring context: 2B                                                                                                                                                                               0.0s
+ => [internal] load metadata for docker.io/library/python:3.9-alpine                                                                                                                                          7.6s
+ => [internal] load build context                                                                                                                                                                             0.0s
+ => => transferring context: 973B                                                                                                                                                                             0.0s
+ => [1/5] FROM docker.io/library/python:3.9-alpine@sha256:a90109e6a257b503924fbc69c782850d4ad98e9b778697d046352ef149368234                                                                                   17.8s
+ => => resolve docker.io/library/python:3.9-alpine@sha256:a90109e6a257b503924fbc69c782850d4ad98e9b778697d046352ef149368234                                                                                    0.0s
+ => => sha256:f2aeefbeb3846b146a8ad9b995af469d249272af804b309318e2c72c9ca035b0 1.37kB / 1.37kB                                                                                                                0.0s
+ => => sha256:1b2eadcedc98a8126114ed71fff85b0656ea6835a1afbce4a64fee2ab26e689a 7.22kB / 7.22kB                                                                                                                0.0s
+ => => sha256:59bf1c3509f33515622619af21ed55bbe26d24913cedbca106468a5fb37a50c3 2.82MB / 2.82MB                                                                                                                3.9s
+ => => sha256:07a400e93df3fcc09e5f874878c049b15515236f55fbf76013c0779a7cc4a301 678.30kB / 678.30kB                                                                                                            3.0s
+ => => sha256:f85f6a3337b0fcaf0fa34d152e646b57c79cbe436683dab635a93be6ebddcc0a 12.98MB / 12.98MB                                                                                                             16.1s
+ => => sha256:a90109e6a257b503924fbc69c782850d4ad98e9b778697d046352ef149368234 1.65kB / 1.65kB                                                                                                                0.0s
+ => => sha256:f371926c991d72549fffa2775fa6f55f911e2700bfc9f2513eebf9a723ff4192 232B / 232B                                                                                                                    3.9s
+ => => extracting sha256:59bf1c3509f33515622619af21ed55bbe26d24913cedbca106468a5fb37a50c3                                                                                                                     0.2s
+ => => sha256:0b4d52bcc8c2d13a38065f461a34e644db9a56274c188ab7d1cb305ec1893592 2.35MB / 2.35MB                                                                                                                8.0s
+ => => extracting sha256:07a400e93df3fcc09e5f874878c049b15515236f55fbf76013c0779a7cc4a301                                                                                                                     0.3s
+ => => extracting sha256:f85f6a3337b0fcaf0fa34d152e646b57c79cbe436683dab635a93be6ebddcc0a                                                                                                                     0.8s
+ => => extracting sha256:f371926c991d72549fffa2775fa6f55f911e2700bfc9f2513eebf9a723ff4192                                                                                                                     0.0s
+ => => extracting sha256:0b4d52bcc8c2d13a38065f461a34e644db9a56274c188ab7d1cb305ec1893592                                                                                                                     0.3s
+ => [2/5] WORKDIR /code                                                                                                                                                                                       0.2s
+ => [3/5] COPY requirements.txt /code/requirements.txt                                                                                                                                                        0.1s
+ => ERROR [4/5] RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt                                                                                                                           51.7s
+------
+ > [4/5] RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt:
+#8 3.450 Ignoring colorama: markers 'python_version >= "3.7" and python_full_version < "3.0.0" and sys_platform == "win32" and platform_system == "Windows" or sys_platform == "win32" and python_version >= "3.7" and python_full_version >= "3.5.0" and platform_system == "Windows"' don't match your environment
+#8 5.349 Collecting anyio==3.5.0
+#8 6.652   Downloading anyio-3.5.0-py3-none-any.whl (79 kB)
+#8 7.107 Collecting asgiref==3.5.0
+#8 7.472   Downloading asgiref-3.5.0-py3-none-any.whl (22 kB)
+#8 7.931 Collecting click==8.0.3
+#8 8.437   Downloading click-8.0.3-py3-none-any.whl (97 kB)
+#8 8.761 Collecting fastapi==0.73.0
+#8 8.921   Downloading fastapi-0.73.0-py3-none-any.whl (52 kB)
+#8 9.120 Collecting h11==0.13.0
+#8 9.294   Downloading h11-0.13.0-py3-none-any.whl (58 kB)
+#8 9.477 Collecting httptools==0.3.0
+#8 9.676   Downloading httptools-0.3.0.tar.gz (170 kB)
+#8 10.81 Collecting idna==3.3
+#8 10.98   Downloading idna-3.3-py3-none-any.whl (61 kB)
+#8 11.50 Collecting pydantic==1.9.0
+#8 11.80   Downloading pydantic-1.9.0-cp39-cp39-musllinux_1_1_x86_64.whl (12.3 MB)
+#8 21.12 Collecting python-dotenv==0.19.2
+#8 21.28   Downloading python_dotenv-0.19.2-py2.py3-none-any.whl (17 kB)
+#8 21.50 Collecting pyyaml==6.0
+#8 21.67   Downloading PyYAML-6.0.tar.gz (124 kB)
+#8 22.22   Installing build dependencies: started
+#8 35.90   Installing build dependencies: finished with status 'done'
+#8 35.91   Getting requirements to build wheel: started
+#8 37.35   Getting requirements to build wheel: finished with status 'done'
+#8 37.36     Preparing wheel metadata: started
+#8 37.82     Preparing wheel metadata: finished with status 'done'
+#8 37.93 Collecting sniffio==1.2.0
+#8 38.09   Downloading sniffio-1.2.0-py3-none-any.whl (10 kB)
+#8 38.24 Collecting starlette==0.17.1
+#8 38.39   Downloading starlette-0.17.1-py3-none-any.whl (58 kB)
+#8 38.55 Collecting typing-extensions==4.0.1
+#8 38.71   Downloading typing_extensions-4.0.1-py3-none-any.whl (22 kB)
+#8 38.87 Collecting uvicorn==0.17.1
+#8 39.03   Downloading uvicorn-0.17.1-py3-none-any.whl (54 kB)
+#8 39.29 Collecting uvloop==0.16.0
+#8 39.45   Downloading uvloop-0.16.0.tar.gz (2.1 MB)
+#8 41.82 Collecting watchgod==0.7
+#8 42.00   Downloading watchgod-0.7-py3-none-any.whl (11 kB)
+#8 42.26 Collecting websockets==10.1
+#8 42.43   Downloading websockets-10.1-cp39-cp39-musllinux_1_1_x86_64.whl (109 kB)
+#8 42.84 Building wheels for collected packages: httptools, pyyaml, uvloop
+#8 42.84   Building wheel for httptools (setup.py): started
+#8 43.22   Building wheel for httptools (setup.py): finished with status 'error'
+#8 43.22   ERROR: Command errored out with exit status 1:
+#8 43.22    command: /usr/local/bin/python -u -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-ua4srhnf/httptools_2632e27907e4481f82117f50e6e9132d/setup.py'"'"'; __file__='"'"'/tmp/pip-install-ua4srhnf/httptools_2632e27907e4481f82117f50e6e9132d/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-p7_g84kc
+#8 43.22        cwd: /tmp/pip-install-ua4srhnf/httptools_2632e27907e4481f82117f50e6e9132d/
+#8 43.22   Complete output (32 lines):
+#8 43.22   running bdist_wheel
+#8 43.22   running build
+#8 43.22   running build_py
+#8 43.22   creating build
+#8 43.22   creating build/lib.linux-x86_64-3.9
+#8 43.22   creating build/lib.linux-x86_64-3.9/httptools
+#8 43.22   copying httptools/_version.py -> build/lib.linux-x86_64-3.9/httptools
+#8 43.22   copying httptools/__init__.py -> build/lib.linux-x86_64-3.9/httptools
+#8 43.22   creating build/lib.linux-x86_64-3.9/httptools/parser
+#8 43.22   copying httptools/parser/errors.py -> build/lib.linux-x86_64-3.9/httptools/parser
+#8 43.22   copying httptools/parser/__init__.py -> build/lib.linux-x86_64-3.9/httptools/parser
+#8 43.22   running egg_info
+#8 43.22   writing httptools.egg-info/PKG-INFO
+#8 43.22   writing dependency_links to httptools.egg-info/dependency_links.txt
+#8 43.22   writing requirements to httptools.egg-info/requires.txt
+#8 43.22   writing top-level names to httptools.egg-info/top_level.txt
+#8 43.22   reading manifest file 'httptools.egg-info/SOURCES.txt'
+#8 43.22   reading manifest template 'MANIFEST.in'
+#8 43.22   adding license file 'LICENSE'
+#8 43.22   writing manifest file 'httptools.egg-info/SOURCES.txt'
+#8 43.22   copying httptools/parser/parser.c -> build/lib.linux-x86_64-3.9/httptools/parser
+#8 43.22   copying httptools/parser/url_parser.c -> build/lib.linux-x86_64-3.9/httptools/parser
+#8 43.22   running build_ext
+#8 43.22   building 'httptools.parser.parser' extension
+#8 43.22   creating build/temp.linux-x86_64-3.9
+#8 43.22   creating build/temp.linux-x86_64-3.9/httptools
+#8 43.22   creating build/temp.linux-x86_64-3.9/httptools/parser
+#8 43.22   creating build/temp.linux-x86_64-3.9/vendor
+#8 43.22   creating build/temp.linux-x86_64-3.9/vendor/llhttp
+#8 43.22   creating build/temp.linux-x86_64-3.9/vendor/llhttp/src
+#8 43.22   gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -DTHREAD_STACK_SIZE=0x100000 -fPIC -I/tmp/pip-install-ua4srhnf/httptools_2632e27907e4481f82117f50e6e9132d/vendor/llhttp/include -I/tmp/pip-install-ua4srhnf/httptools_2632e27907e4481f82117f50e6e9132d/vendor/llhttp/src -I/usr/local/include/python3.9 -c httptools/parser/parser.c -o build/temp.linux-x86_64-3.9/httptools/parser/parser.o -O2
+#8 43.22   error: command 'gcc' failed: No such file or directory
+#8 43.22   ----------------------------------------
+#8 43.22   ERROR: Failed building wheel for httptools
+#8 43.22   Running setup.py clean for httptools
+#8 43.54   Building wheel for pyyaml (PEP 517): started
+#8 44.08   Building wheel for pyyaml (PEP 517): finished with status 'done'
+#8 44.09   Created wheel for pyyaml: filename=PyYAML-6.0-cp39-cp39-linux_x86_64.whl size=45332 sha256=f9078059652f9f0334b5957460eb83e6b107786cdc5324057044a79013ba5182
+#8 44.09   Stored in directory: /tmp/pip-ephem-wheel-cache-pc334wdv/wheels/b4/0f/9a/d6af48581dda678920fccfb734f5d9f827c6ed5b4074c7eda8
+#8 44.09   Building wheel for uvloop (setup.py): started
+#8 46.05   Building wheel for uvloop (setup.py): finished with status 'error'
+#8 46.05   ERROR: Command errored out with exit status 1:
+#8 46.05    command: /usr/local/bin/python -u -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/setup.py'"'"'; __file__='"'"'/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-geg7vua5
+#8 46.05        cwd: /tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/
+#8 46.05   Complete output (133 lines):
+#8 46.05   running bdist_wheel
+#8 46.05   running build
+#8 46.05   running build_py
+#8 46.05   creating build
+#8 46.05   creating build/lib.linux-x86_64-3.9
+#8 46.05   creating build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/_noop.py -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/_version.py -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/__init__.py -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/_testbase.py -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   running egg_info
+#8 46.05   writing uvloop.egg-info/PKG-INFO
+#8 46.05   writing dependency_links to uvloop.egg-info/dependency_links.txt
+#8 46.05   writing requirements to uvloop.egg-info/requires.txt
+#8 46.05   writing top-level names to uvloop.egg-info/top_level.txt
+#8 46.05   reading manifest file 'uvloop.egg-info/SOURCES.txt'
+#8 46.05   reading manifest template 'MANIFEST.in'
+#8 46.05   warning: no previously-included files matching '*' found under directory 'vendor/libuv/.git'
+#8 46.05   warning: no previously-included files matching '*' found under directory 'vendor/libuv/docs'
+#8 46.05   warning: no previously-included files matching '*' found under directory 'vendor/libuv/img'
+#8 46.05   adding license file 'LICENSE-APACHE'
+#8 46.05   adding license file 'LICENSE-MIT'
+#8 46.05   writing manifest file 'uvloop.egg-info/SOURCES.txt'
+#8 46.05   copying uvloop/cbhandles.pxd -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/cbhandles.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/dns.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/errors.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/loop.c -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/loop.pxd -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/loop.pyi -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/loop.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/lru.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/pseudosock.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/py.typed -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/request.pxd -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/request.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/server.pxd -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/server.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/sslproto.pxd -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   copying uvloop/sslproto.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 46.05   creating build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/async_.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/async_.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/basetransport.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/basetransport.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/check.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/check.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/handle.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/handle.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/idle.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/idle.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/pipe.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/pipe.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/poll.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/poll.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/process.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/process.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/stream.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/stream.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/streamserver.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/streamserver.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/tcp.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/tcp.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/timer.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/timer.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/udp.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   copying uvloop/handles/udp.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 46.05   creating build/lib.linux-x86_64-3.9/uvloop/includes
+#8 46.05   copying uvloop/includes/__init__.py -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 46.05   copying uvloop/includes/compat.h -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 46.05   copying uvloop/includes/consts.pxi -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 46.05   copying uvloop/includes/debug.h -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 46.05   copying uvloop/includes/debug.pxd -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 46.05   copying uvloop/includes/flowcontrol.pxd -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 46.05   copying uvloop/includes/fork_handler.h -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 46.05   copying uvloop/includes/python.pxd -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 46.05   copying uvloop/includes/stdlib.pxi -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 46.05   copying uvloop/includes/system.pxd -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 46.05   copying uvloop/includes/uv.pxd -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 46.05   running build_ext
+#8 46.05   checking for a BSD-compatible install... /usr/bin/install -c
+#8 46.05   checking whether build environment is sane... yes
+#8 46.05   checking for a thread-safe mkdir -p... ./install-sh -c -d
+#8 46.05   checking for gawk... no
+#8 46.05   checking for mawk... no
+#8 46.05   checking for nawk... no
+#8 46.05   checking for awk... awk
+#8 46.05   checking whether make sets $(MAKE)... no
+#8 46.05   checking whether make supports nested variables... no
+#8 46.05   checking build system type... ./config.guess: line 1049: objdump: not found
+#8 46.05   x86_64-pc-linux-musl
+#8 46.05   checking host system type... x86_64-pc-linux-musl
+#8 46.05   checking for gcc... no
+#8 46.05   checking for cc... no
+#8 46.05   checking for cl.exe... no
+#8 46.05   configure: error: in `/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/build/libuv-x86_64':
+#8 46.05   configure: error: no acceptable C compiler found in $PATH
+#8 46.05   See `config.log' for more details
+#8 46.05   Traceback (most recent call last):
+#8 46.05     File "<string>", line 1, in <module>
+#8 46.05     File "/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/setup.py", line 283, in <module>
+#8 46.05       setup(
+#8 46.05     File "/usr/local/lib/python3.9/site-packages/setuptools/__init__.py", line 153, in setup
+#8 46.05       return distutils.core.setup(**attrs)
+#8 46.05     File "/usr/local/lib/python3.9/distutils/core.py", line 148, in setup
+#8 46.05       dist.run_commands()
+#8 46.05     File "/usr/local/lib/python3.9/distutils/dist.py", line 966, in run_commands
+#8 46.05       self.run_command(cmd)
+#8 46.05     File "/usr/local/lib/python3.9/distutils/dist.py", line 985, in run_command
+#8 46.05       cmd_obj.run()
+#8 46.05     File "/usr/local/lib/python3.9/site-packages/wheel/bdist_wheel.py", line 299, in run
+#8 46.05       self.run_command('build')
+#8 46.05     File "/usr/local/lib/python3.9/distutils/cmd.py", line 313, in run_command
+#8 46.05       self.distribution.run_command(command)
+#8 46.05     File "/usr/local/lib/python3.9/distutils/dist.py", line 985, in run_command
+#8 46.05       cmd_obj.run()
+#8 46.05     File "/usr/local/lib/python3.9/distutils/command/build.py", line 135, in run
+#8 46.05       self.run_command(cmd_name)
+#8 46.05     File "/usr/local/lib/python3.9/distutils/cmd.py", line 313, in run_command
+#8 46.05       self.distribution.run_command(command)
+#8 46.05     File "/usr/local/lib/python3.9/distutils/dist.py", line 985, in run_command
+#8 46.05       cmd_obj.run()
+#8 46.05     File "/usr/local/lib/python3.9/site-packages/setuptools/command/build_ext.py", line 79, in run
+#8 46.05       _build_ext.run(self)
+#8 46.05     File "/usr/local/lib/python3.9/distutils/command/build_ext.py", line 340, in run
+#8 46.05       self.build_extensions()
+#8 46.05     File "/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/setup.py", line 242, in build_extensions
+#8 46.05       self.build_libuv()
+#8 46.05     File "/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/setup.py", line 221, in build_libuv
+#8 46.05       subprocess.run(
+#8 46.05     File "/usr/local/lib/python3.9/subprocess.py", line 528, in run
+#8 46.05       raise CalledProcessError(retcode, process.args,
+#8 46.05   subprocess.CalledProcessError: Command '['./configure']' returned non-zero exit status 1.
+#8 46.05   ----------------------------------------
+#8 46.05   ERROR: Failed building wheel for uvloop
+#8 46.05   Running setup.py clean for uvloop
+#8 46.39 Successfully built pyyaml
+#8 46.39 Failed to build httptools uvloop
+#8 46.62 Installing collected packages: sniffio, idna, typing-extensions, anyio, starlette, pydantic, h11, click, asgiref, websockets, watchgod, uvloop, uvicorn, pyyaml, python-dotenv, httptools, fastapi
+#8 48.26     Running setup.py install for uvloop: started
+#8 50.20     Running setup.py install for uvloop: finished with status 'error'
+#8 50.20     ERROR: Command errored out with exit status 1:
+#8 50.20      command: /usr/local/bin/python -u -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/setup.py'"'"'; __file__='"'"'/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-c0munzu7/install-record.txt --single-version-externally-managed --compile --install-headers /usr/local/include/python3.9/uvloop
+#8 50.20          cwd: /tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/
+#8 50.20     Complete output (134 lines):
+#8 50.20     running install
+#8 50.20     running build
+#8 50.20     running build_py
+#8 50.20     creating build/lib.linux-x86_64-3.9
+#8 50.20     creating build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/_noop.py -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/_version.py -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/__init__.py -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/_testbase.py -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     running egg_info
+#8 50.20     writing uvloop.egg-info/PKG-INFO
+#8 50.20     writing dependency_links to uvloop.egg-info/dependency_links.txt
+#8 50.20     writing requirements to uvloop.egg-info/requires.txt
+#8 50.20     writing top-level names to uvloop.egg-info/top_level.txt
+#8 50.20     reading manifest file 'uvloop.egg-info/SOURCES.txt'
+#8 50.20     reading manifest template 'MANIFEST.in'
+#8 50.20     warning: no previously-included files matching '*' found under directory 'vendor/libuv/.git'
+#8 50.20     warning: no previously-included files matching '*' found under directory 'vendor/libuv/docs'
+#8 50.20     warning: no previously-included files matching '*' found under directory 'vendor/libuv/img'
+#8 50.20     adding license file 'LICENSE-APACHE'
+#8 50.20     adding license file 'LICENSE-MIT'
+#8 50.20     writing manifest file 'uvloop.egg-info/SOURCES.txt'
+#8 50.20     copying uvloop/cbhandles.pxd -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/cbhandles.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/dns.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/errors.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/loop.c -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/loop.pxd -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/loop.pyi -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/loop.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/lru.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/pseudosock.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/py.typed -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/request.pxd -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/request.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/server.pxd -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/server.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/sslproto.pxd -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     copying uvloop/sslproto.pyx -> build/lib.linux-x86_64-3.9/uvloop
+#8 50.20     creating build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/async_.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/async_.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/basetransport.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/basetransport.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/check.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/check.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/handle.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/handle.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/idle.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/idle.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/pipe.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/pipe.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/poll.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/poll.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/process.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/process.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/stream.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/stream.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/streamserver.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/streamserver.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/tcp.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/tcp.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/timer.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/timer.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/udp.pxd -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     copying uvloop/handles/udp.pyx -> build/lib.linux-x86_64-3.9/uvloop/handles
+#8 50.20     creating build/lib.linux-x86_64-3.9/uvloop/includes
+#8 50.20     copying uvloop/includes/__init__.py -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 50.20     copying uvloop/includes/compat.h -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 50.20     copying uvloop/includes/consts.pxi -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 50.20     copying uvloop/includes/debug.h -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 50.20     copying uvloop/includes/debug.pxd -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 50.20     copying uvloop/includes/flowcontrol.pxd -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 50.20     copying uvloop/includes/fork_handler.h -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 50.20     copying uvloop/includes/python.pxd -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 50.20     copying uvloop/includes/stdlib.pxi -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 50.20     copying uvloop/includes/system.pxd -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 50.20     copying uvloop/includes/uv.pxd -> build/lib.linux-x86_64-3.9/uvloop/includes
+#8 50.20     running build_ext
+#8 50.20     checking for a BSD-compatible install... /usr/bin/install -c
+#8 50.20     checking whether build environment is sane... yes
+#8 50.20     checking for a thread-safe mkdir -p... ./install-sh -c -d
+#8 50.20     checking for gawk... no
+#8 50.20     checking for mawk... no
+#8 50.20     checking for nawk... no
+#8 50.20     checking for awk... awk
+#8 50.20     checking whether make sets $(MAKE)... no
+#8 50.20     checking whether make supports nested variables... no
+#8 50.20     checking build system type... ./config.guess: line 1049: objdump: not found
+#8 50.20     x86_64-pc-linux-musl
+#8 50.20     checking host system type... x86_64-pc-linux-musl
+#8 50.20     checking for gcc... no
+#8 50.20     checking for cc... no
+#8 50.20     checking for cl.exe... no
+#8 50.20     configure: error: in `/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/build/libuv-x86_64':
+#8 50.20     configure: error: no acceptable C compiler found in $PATH
+#8 50.20     See `config.log' for more details
+#8 50.20     Traceback (most recent call last):
+#8 50.20       File "<string>", line 1, in <module>
+#8 50.20       File "/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/setup.py", line 283, in <module>
+#8 50.20         setup(
+#8 50.20       File "/usr/local/lib/python3.9/site-packages/setuptools/__init__.py", line 153, in setup
+#8 50.20         return distutils.core.setup(**attrs)
+#8 50.20       File "/usr/local/lib/python3.9/distutils/core.py", line 148, in setup
+#8 50.20         dist.run_commands()
+#8 50.20       File "/usr/local/lib/python3.9/distutils/dist.py", line 966, in run_commands
+#8 50.20         self.run_command(cmd)
+#8 50.20       File "/usr/local/lib/python3.9/distutils/dist.py", line 985, in run_command
+#8 50.20         cmd_obj.run()
+#8 50.20       File "/usr/local/lib/python3.9/site-packages/setuptools/command/install.py", line 61, in run
+#8 50.20         return orig.install.run(self)
+#8 50.20       File "/usr/local/lib/python3.9/distutils/command/install.py", line 546, in run
+#8 50.20         self.run_command('build')
+#8 50.20       File "/usr/local/lib/python3.9/distutils/cmd.py", line 313, in run_command
+#8 50.20         self.distribution.run_command(command)
+#8 50.20       File "/usr/local/lib/python3.9/distutils/dist.py", line 985, in run_command
+#8 50.20         cmd_obj.run()
+#8 50.20       File "/usr/local/lib/python3.9/distutils/command/build.py", line 135, in run
+#8 50.20         self.run_command(cmd_name)
+#8 50.20       File "/usr/local/lib/python3.9/distutils/cmd.py", line 313, in run_command
+#8 50.20         self.distribution.run_command(command)
+#8 50.20       File "/usr/local/lib/python3.9/distutils/dist.py", line 985, in run_command
+#8 50.20         cmd_obj.run()
+#8 50.20       File "/usr/local/lib/python3.9/site-packages/setuptools/command/build_ext.py", line 79, in run
+#8 50.20         _build_ext.run(self)
+#8 50.20       File "/usr/local/lib/python3.9/distutils/command/build_ext.py", line 340, in run
+#8 50.20         self.build_extensions()
+#8 50.20       File "/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/setup.py", line 242, in build_extensions
+#8 50.20         self.build_libuv()
+#8 50.20       File "/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/setup.py", line 221, in build_libuv
+#8 50.20         subprocess.run(
+#8 50.20       File "/usr/local/lib/python3.9/subprocess.py", line 528, in run
+#8 50.20         raise CalledProcessError(retcode, process.args,
+#8 50.20     subprocess.CalledProcessError: Command '['./configure']' returned non-zero exit status 1.
+#8 50.20     ----------------------------------------
+#8 50.21 ERROR: Command errored out with exit status 1: /usr/local/bin/python -u -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/setup.py'"'"'; __file__='"'"'/tmp/pip-install-ua4srhnf/uvloop_7178c37ca40448ee9cd3403132f82181/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /tmp/pip-record-c0munzu7/install-record.txt --single-version-externally-managed --compile --install-headers /usr/local/include/python3.9/uvloop Check the logs for full command output.
+#8 51.24 WARNING: You are using pip version 21.2.4; however, version 22.0.2 is available.
+#8 51.24 You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+------
+executor failed running [/bin/sh -c pip install --no-cache-dir --upgrade -r /code/requirements.txt]: exit code: 1
